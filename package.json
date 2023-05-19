@@ -1,5 +1,5 @@
 {
-  "name": "todo-app",
+  "name": "react-redux-group-project-space-travelers-hub",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,14 +7,21 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "vitest",
     "linters": "eslint \"**/*.{js,jsx}\" & stylelint \"**/*.{css,scss}\"",
     "eslint": "eslint \"**/*.{js,jsx}\" --fix",
     "style": "stylelint \"**/*.{css,scss}\" --fix"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
+    "bootstrap": "^5.2.3",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
-    "uuid": "^9.0.0"
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.2",
+    "reactjs-popup": "^2.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -22,6 +29,8 @@
     "@babel/plugin-syntax-jsx": "^7.18.6",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
@@ -31,6 +40,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "jsdom": "^21.1.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
