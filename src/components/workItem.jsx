@@ -8,7 +8,7 @@ export default function WorkItem({ myProj, index }) {
   } = myProj;
 
   return (
-    <div className="work-item">
+    <div className="work-item inactive">
       <div className="thumbnail">
         <img src={images[0]} alt="N/A" />
       </div>
@@ -19,7 +19,7 @@ export default function WorkItem({ myProj, index }) {
         <p className="description">
           {info}
         </p>
-        <Popup trigger={<button type="button" id="mybtn">See Details</button>} position={index % 2 === 0 ? 'right' : 'right center'}>
+        <Popup trigger={<button type="button" id="mybtn" className="normal-button">See Details</button>} position={index % 2 === 0 ? 'right' : 'right center'}>
           <div id="showDetails">
             <h1 className="showtitle">
               {title}

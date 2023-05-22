@@ -148,7 +148,7 @@ function Home() {
             <input name="user_name" type="text" placeholder="Name" maxLength="30" required />
             <input id="email" name="user_email" type="email" placeholder="Email" required />
             <textarea name="message" cols="30" rows="10" placeholder="Write your message here" maxLength="500" required />
-            <button type="submit">Get In Touch</button>
+            <button type="submit" className="form-btn">Get In Touch</button>
             <span className="message">
               Email Should be in lower case
               <br />
