@@ -412,7 +412,6 @@ h1 {
   display: none;
 }
 
-.normal-button,
 .resume-button {
   border: 1px solid #6070ff;
   border-radius: 8px;
@@ -582,12 +581,21 @@ button {
   font-size: 0.7rem;
 }
 
+.items {
+  color: black;
+  margin-top: 2%;
+}
+
+.work-item:hover {
+  box-shadow: 5px 5px 5px 5px grey;
+  transition: ease-in-out 0.5s;
+}
+
 #innermsg {
   font-size: 0.6rem;
 }
 
 /* effects */
-.normal-button:hover,
 .resume-button:hover {
   background: #6070ff;
   box-shadow: 5px 5px 5px blue;
@@ -828,11 +836,6 @@ button:disabled {
 
   .tags {
     gap: 2%;
-  }
-
-  .normal-button {
-    width: 130px;
-    height: 48px;
   }
 
   .about {

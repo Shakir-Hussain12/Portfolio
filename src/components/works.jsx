@@ -32,7 +32,7 @@ export default function Works() {
         dataItems.map((item) => {
           mykey += 1;
           return (
-            <WorkItem myProj={item} key={mykey} index={mykey} />
+            <WorkItem myProj={item} key={mykey} />
           );
         })
       }
