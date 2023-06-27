@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import SideNav from './sideNav';
 import '../pages/Style.css';
 
 const myLinks = [
@@ -12,39 +13,33 @@ let mykey = 'Abcdef1z';
 
 export default function Navbar() {
   return (
-    <nav className="navbar">
-      <NavLink
-        className={`${(link) => (link.isActive ? 'link active' : 'link')} logo`}
-        to="/"
-      >
-        Shakir Hussain
-      </NavLink>
-      <ul className="page-flow">
-        {
-            myLinks.map((mylink) => {
-              mykey += 1;
-              return (
-                <li key={mykey}>
-                  <NavLink
-                    className={(link) => (link.isActive ? 'link active' : 'link')}
-                    to={mylink.to}
-                  >
-                    { mylink.name }
-                  </NavLink>
-                </li>
-              );
-            })
-        }
-      </ul>
-      <button
-        type="button"
-        className="union"
-        onClick={() => {
-          console.log('hey');
-        }}
-      >
-        <img className="hamburger" alt="" />
-      </button>
-    </nav>
+    <>
+      <nav className="navbar hide-on-med-and-down">
+        <NavLink
+          className={`${(link) => (link.isActive ? 'link active' : 'link')} logo`}
+          to="/"
+        >
+          Shakir Hussain
+        </NavLink>
+        <ul className="page-flow">
+          {
+              myLinks.map((mylink) => {
+                mykey += 1;
+                return (
+                  <li key={mykey}>
+                    <NavLink
+                      className={(link) => (link.isActive ? 'link active' : 'link')}
+                      to={mylink.to}
+                    >
+                      { mylink.name }
+                    </NavLink>
+                  </li>
+                );
+              })
+          }
+        </ul>
+      </nav>
+      <SideNav />
+    </>
   );
 }
