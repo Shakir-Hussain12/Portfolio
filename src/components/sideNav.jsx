@@ -1,5 +1,14 @@
 import React, { useEffect, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 import './sideNav.css';
+
+const myLinks = [
+  { to: '/', name: 'Home' },
+  { to: '/about', name: 'About' },
+  { to: '/contact', name: 'Contact' },
+];
+
+let mykey = 'Abcdef1';
 
 const SideNav = () => {
   const sidenavRef = useRef(null);
@@ -19,23 +28,32 @@ const SideNav = () => {
 
   return (
     <>
-      <ul id="slide-out" className="sidenav" ref={sidenavRef}>
+      <ul id="slide-out" className="sidenav hide-on-med-and-up" ref={sidenavRef}>
         <li>
           <div className="user-view">
-            <a href="#user"><img className="circle" src="./images/Profile.jpg" alt="none" /></a>
-            <a href="#name"><span className="black-text name">Shakir Hussain</span></a>
-            <a href="#email"><span className="black-text email">shakir.hussain6969@gmail.com</span></a>
+            <a href="/"><img id="my-profile" src="./images/Profile.jpg" alt="none" /></a>
+            <p className="black-text name">Shakir Hussain</p>
+            <a href="#email"><span className="blue-text email">shakir.hussain6969@gmail.com</span></a>
           </div>
         </li>
-        <li><a href="#!">Home</a></li>
-        <li><a className="waves-effect" href="#!">Projects</a></li>
-        <li><div className="divider" /></li>
-        <li><a className="waves-effect" href="#!">About</a></li>
-        <li><a className="waves-effect" href="#!">Contact</a></li>
-        <li><div className="divider" /></li>
-        <li><a className="sidenav-close" href="#!" onClick={handleNav}>Hide</a></li>
+        {
+              myLinks.map((mylink) => {
+                mykey += 1;
+                return (
+                  <li key={mykey}>
+                    <NavLink
+                      className={(link) => (link.isActive ? 'link mobile' : 'link')}
+                      to={mylink.to}
+                    >
+                      { mylink.name }
+                    </NavLink>
+                  </li>
+                );
+              })
+          }
+        <li><a className="sidenav-close" href="/" onClick={handleNav}><i className="material-icons">arrow_back</i></a></li>
       </ul>
-      <a href="/" data-target="slide-out" className="sidenav-trigger hide-on-med-and-up" onClick={handleNav}><i className="material-icons">menu</i></a>
+      <a href="/" data-target="slide-out" className="sidenav-trigger hide-on-med-and-up" onClick={handleNav}><i className="material-icons"><i className="material-icons">menu</i></i></a>
     </>
   );
 };
