@@ -1,10 +1,31 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Works from '../components/works';
 import './Style.css';
 
-function Home() {
+const Home = () => {
+  const [email, setEmail] = useState('');
+  const errDisplay = document.querySelector('.message');
+  const form = document.querySelector('#myform');
+  const html = document.querySelector('html');
+
+  html.onclick = () => {
+    if (errDisplay) {
+      errDisplay.classList.remove('active');
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const str = email.toLowerCase();
+    if (email !== str) {
+      errDisplay.classList.add('active');
+    } else {
+      form.submit();
+    }
+  };
+
   return (
     <div className="wrapper">
       <header>
@@ -144,9 +165,9 @@ function Home() {
           <p className="contact-text">
             If you have an application you are interested in developing, a feature that you need built or a project that needs coding. I’d love to help with it
           </p>
-          <form action="https://formspree.io/f/myyvrwaj" id="myform" className="my-form" method="post">
+          <form action="https://formspree.io/f/myyvrwaj" id="myform" className="my-form" method="post" onSubmit={handleSubmit}>
             <input name="user_name" type="text" placeholder="Name" maxLength="30" required />
-            <input id="email" name="user_email" type="email" placeholder="Email" required />
+            <input id="email" name="user_email" type="email" placeholder="Email" required onChange={(e) => { setEmail(e.target.value); }} />
             <textarea name="message" cols="30" rows="10" placeholder="Write your message here" maxLength="500" required />
             <button type="submit" className="form-btn">Get In Touch</button>
             <span className="message">

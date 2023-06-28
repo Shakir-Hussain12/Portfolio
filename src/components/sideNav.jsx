@@ -4,6 +4,7 @@ import './sideNav.css';
 
 const myLinks = [
   { to: '/', name: 'Home' },
+  { to: '/project', name: 'Projects' },
   { to: '/about', name: 'About' },
   { to: '/contact', name: 'Contact' },
 ];
@@ -28,7 +29,7 @@ const SideNav = () => {
 
   return (
     <>
-      <ul id="slide-out" className="sidenav hide-on-med-and-up" ref={sidenavRef}>
+      <ul id="slide-out" className="sidenav" ref={sidenavRef}>
         <li>
           <div className="user-view">
             <a href="/"><img id="my-profile" src="./images/Profile.jpg" alt="none" /></a>
@@ -53,7 +54,7 @@ const SideNav = () => {
           }
         <li><a className="sidenav-close" href="/" onClick={handleNav}><i className="material-icons">arrow_back</i></a></li>
       </ul>
-      <a href="/" data-target="slide-out" className="sidenav-trigger hide-on-med-and-up" onClick={handleNav}><i className="material-icons"><i className="material-icons">menu</i></i></a>
+      <a href="/" data-target="slide-out" className="sidenav-trigger" onClick={handleNav}><i className="material-icons"><i className="material-icons">menu</i></i></a>
     </>
   );
 };

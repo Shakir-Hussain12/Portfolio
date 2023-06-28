@@ -5,6 +5,7 @@ import '../pages/Style.css';
 
 const myLinks = [
   { to: '/', name: 'Home' },
+  { to: '/project', name: 'Projects' },
   { to: '/about', name: 'About' },
   { to: '/contact', name: 'Contact' },
 ];
@@ -14,7 +15,7 @@ let mykey = 'Abcdef1z';
 export default function Navbar() {
   return (
     <>
-      <nav className="navbar hide-on-med-and-down">
+      <nav className="navbar">
         <NavLink
           className={`${(link) => (link.isActive ? 'link active' : 'link')} logo`}
           to="/"

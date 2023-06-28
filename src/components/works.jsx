@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import dataItems from '../../dataItems';
+import dataItems from '../../miniData';
 import WorkItem from './workItem';
 
 function isElementInViewport(element) {
@@ -36,6 +36,12 @@ export default function Works() {
           );
         })
       }
+      <center>
+        <a href="/projects" className="waves-effect waves-light btn teal darken-4">
+          <i className="material-icons right">featured_play_list</i>
+          Click to See All Projects
+        </a>
+      </center>
     </section>
   );
 }
