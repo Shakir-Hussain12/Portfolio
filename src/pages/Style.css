@@ -516,8 +516,12 @@ nav {
   }
 
   nav {
-    background: #253858;
+    background: linear-gradient(-19deg, darkgray, transparent);
     border-radius: 5px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 100px;
   }
   
   .navbar {
@@ -540,7 +544,6 @@ nav {
     background-color: black;
     position: absolute;
     top: 0;
-    box-shadow: 0 10px 20px whitesmoke;
     z-index: 1;
   }
 
