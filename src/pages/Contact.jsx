@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import './Style.css';
 
 const Contact = () => (
-  <>
+  <div className="wrapper">
     <header>
       <Navbar />
     </header>
@@ -31,7 +31,7 @@ const Contact = () => (
         </form>
       </div>
     </section>
-  </>
+  </div>
 );
 
 export default Contact;

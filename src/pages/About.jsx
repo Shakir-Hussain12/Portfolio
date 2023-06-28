@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import './Style.css';
 
 const About = () => (
-  <>
+  <div className="wrapper">
     <header>
       <Navbar />
     </header>
@@ -94,7 +94,7 @@ const About = () => (
         </ul>
       </div>
     </section>
-  </>
+  </div>
 );
 
 export default About;

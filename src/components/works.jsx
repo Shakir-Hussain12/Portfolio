@@ -12,10 +12,13 @@ function isElementInViewport(element) {
 
 function handleScroll() {
   const projects = document.getElementsByClassName('work-item');
+  const button = document.querySelector('#expand');
   for (let i = 0; i < projects.length; i += 1) {
     const project = projects[i];
-    if (isElementInViewport(project) && !project.classList.contains('animate')) {
+    if (isElementInViewport(project) && !project.classList.contains('animate') && project && button) {
       project.classList.remove('inactive');
+      button.classList.remove('inactive');
+      button.classList.add('animate');
       project.classList.add('animate');
     }
   }
@@ -37,7 +40,7 @@ export default function Works() {
         })
       }
       <center>
-        <a href="/projects" className="waves-effect waves-light btn teal darken-4">
+        <a href="/project" className="waves-effect waves-light btn teal darken-4 inactive" id="expand">
           <i className="material-icons right">featured_play_list</i>
           Click to See All Projects
         </a>

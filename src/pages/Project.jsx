@@ -1,24 +1,28 @@
 import React from 'react';
 import dataItems from '../../dataItems';
-import WorkItem from '../components/workItem';
+import ProjItem from '../components/projItem';
 import Navbar from '../components/Navbar';
+import './Style.css';
 
 const Project = () => {
-  let mykey = 0;
+  let mykey = 'Ab24c1';
+
   return (
-    <>
-      <Navbar />
-      <section id="projects">
+    <div className="wrapper">
+      <header>
+        <Navbar />
+      </header>
+      <section id="my-projects">
         {
         dataItems.map((item) => {
           mykey += 1;
           return (
-            <WorkItem myProj={item} key={mykey} />
+            <ProjItem myProj={item} key={mykey} />
           );
         })
       }
       </section>
-    </>
+    </div>
   );
 };
 
