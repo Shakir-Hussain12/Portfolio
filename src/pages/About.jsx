@@ -59,19 +59,19 @@ const About = () => (
                 <a href="/"><img src="./images/Ellipse 1.png" alt="JS" /></a>
                 <span className="inside-text">
                   JavaSript
-                  </span>
+                </span>
               </li>
               <li className="sub-language">
                 <a href="/"><img src="./images//Ellipse 1 (1).png" alt="HTML" /></a>
                 <span className="inside-text">
                   HTML
-                  </span>
+                </span>
               </li>
               <li className="sub-language">
                 <a href="/"><img src="./images//Ellipse 1 (2).png" alt="CSS" /></a>
                 <span className="inside-text">
                   CSS
-                  </span>
+                </span>
               </li>
             </ul>
           </li>

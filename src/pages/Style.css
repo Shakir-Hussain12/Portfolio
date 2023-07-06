@@ -70,6 +70,7 @@
 
 :root {
   --blue-color: #344563;
+
   width: 100%;
 }
 
@@ -286,7 +287,7 @@ h1 {
 .resume-button {
   border: 1px solid #6070ff;
   border-radius: 8px;
-  width: 124px;
+  width: 168px;
   height: 48px;
   padding: 12px;
   gap: 10px;
@@ -299,10 +300,6 @@ h1 {
   color: #396df2;
   text-align: center;
   transition: background 2s;
-}
-
-.resume-button {
-  width: 168px;
 }
 
 .about {
@@ -465,13 +462,13 @@ button {
   background: #6070ff;
   box-shadow: 5px 5px 5px blue;
   color: white;
-  transition: box-shadow 1s,background 1.5s;
+  transition: box-shadow 1s, background 1.5s;
 }
 
 .form-btn:hover {
   background: white;
   color: black;
-  filter:drop-shadow(5px 5px 5px red)
+  filter: drop-shadow(5px 5px 5px red);
 }
 
 button:disabled {
@@ -524,11 +521,13 @@ nav {
     border-bottom-right-radius: 100px;
     border-top-left-radius: 100px;
   }
-  
+
   .navbar {
     display: flex;
     justify-content: space-between;
     padding: 0 3%;
+    margin-top: -1%;
+    animation: shownav 2s linear;
   }
 
   html {
@@ -546,11 +545,6 @@ nav {
     position: absolute;
     top: 0;
     z-index: 1;
-  }
-
-  .navbar {
-    margin-top: -1%;
-    animation: shownav 2s linear;
   }
 
   .logo {
@@ -602,7 +596,7 @@ nav {
     padding: 15px;
     padding-bottom: 20px;
   }
-  
+
   .thumbnail {
     display: block;
     min-width: 50%;
@@ -750,6 +744,7 @@ nav {
   header {
     top: -2vh;
   }
+
   .frame-end {
     margin-left: -4%;
   }
