@@ -149,6 +149,32 @@ li {
   margin: 1% 0;
   border-radius: 10px;
   filter: drop-shadow(1px 1px 1px);
+  --border-size: 1px;
+  border-radius: 10px;
+  --border-angle: 0turn;
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 50%,
+      #213
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 3s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
 }
 
 *,
@@ -210,7 +236,8 @@ h1 {
 
 .showbuttons > ul:nth-child(2) {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
   padding-inline-start: 0;
   gap: 2%;
 }
@@ -270,12 +297,12 @@ h1 {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  border: 1px solid;
-  border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
-  animation: borderRotate var(--d) linear infinite forwards;
   gap: 12px;
   width: 90%;
   padding: 16px;
+  border: 1px solid;
+  border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+  animation: borderRotate var(--d) linear infinite forwards;
 }
 
 .work-item.animate {
@@ -561,6 +588,11 @@ nav {
 }
 
 @media (min-width: 768px) {
+  .showbuttons > ul:nth-child(2) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
   .sidenav,
   .sidenav-trigger {
     display: none;
