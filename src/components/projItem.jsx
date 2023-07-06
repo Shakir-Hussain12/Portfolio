@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 export default function ProjItem({ myProj }) {
   const {
@@ -7,7 +8,24 @@ export default function ProjItem({ myProj }) {
   } = myProj;
 
   return (
-    <div className="proj-item inactive">
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: -100,
+        filter: 'blur(10px)',
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+        filter: 'blur(0px)',
+      }}
+      transition={{
+        type: 'spring',
+        stiffness: 100,
+        damping: 50,
+      }}
+      className="proj-item inactive"
+    >
       <div className="thumbnail">
         <img src={images[0]} alt="N/A" />
       </div>
@@ -21,12 +39,12 @@ export default function ProjItem({ myProj }) {
         <li className="showbuttons">
           <ul className="showtech">
             {
-                    tech.map((item) => (
-                      <li key={item}>
-                        {item}
-                      </li>
-                    ))
-                  }
+                      tech.map((item) => (
+                        <li key={item}>
+                          {item}
+                        </li>
+                      ))
+                    }
           </ul>
           <ul>
             <li>
@@ -42,7 +60,7 @@ export default function ProjItem({ myProj }) {
           </ul>
         </li>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

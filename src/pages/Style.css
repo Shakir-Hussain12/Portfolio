@@ -1,5 +1,14 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap";
 
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgba(168, 239, 255, 1);
+	--c2: rgba(168, 239, 255, 0.1);
+}
+
 /* animations */
 @keyframes rotate-border {
   0% {
@@ -63,6 +72,55 @@
     right: 100px;
   }
 }
+
+/* border animation */
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 50%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 50%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
 
 .link.active {
   border-bottom: 3px solid green;
@@ -212,8 +270,9 @@ h1 {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  border: 1px solid #dfe1e6;
-  border-radius: 16px;
+  border: 1px solid;
+  border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+  animation: borderRotate var(--d) linear infinite forwards;
   gap: 12px;
   width: 90%;
   padding: 16px;
@@ -447,12 +506,6 @@ button {
   margin-top: 2%;
 }
 
-.work-item:hover,
-.proj-item:hover {
-  box-shadow: 2px 2px 2px lightgray;
-  transition: ease-in-out 0.5s;
-}
-
 #innermsg {
   font-size: 0.6rem;
 }
@@ -611,7 +664,8 @@ nav {
     object-fit: contain;
   }
 
-  .work-item:nth-child(even) {
+  .work-item:nth-child(even),
+  .proj-item:nth-child(even) {
     flex-direction: row-reverse;
   }
 
