@@ -7,18 +7,37 @@ export default function WorkItem({ myProj }) {
   } = myProj;
 
   return (
-    <div className="work-item inactive">
+    <div
+      data-aos="fade-right"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      className="work-item"
+    >
       <div className="thumbnail">
         <img src={images[0]} alt="N/A" />
       </div>
       <div className="primary-text">
-        <h1 className="title">
+        <h1
+          data-aos="fade-left"
+          data-aos-duration="2000"
+          className="title"
+        >
           {title}
         </h1>
-        <p className="description">
+        <p
+          data-aos="fade-right"
+          data-aos-delay="500"
+          data-aos-duration="2000"
+          className="description"
+        >
           {info}
         </p>
-        <li className="showbuttons">
+        <li
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-duration="3000"
+          className="showbuttons"
+        >
           <ul className="showtech">
             {
                     tech.map((item) => (
