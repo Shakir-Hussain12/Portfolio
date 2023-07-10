@@ -1,8 +1,9 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
+import './Style.css';
+
 import Navbar from '../components/Navbar';
 import Works from '../components/works';
-import './Style.css';
 
 const Home = () => {
   const [email, setEmail] = useState('');

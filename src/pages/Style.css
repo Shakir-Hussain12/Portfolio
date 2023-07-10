@@ -5,8 +5,8 @@
 	--angle: 90deg;
 	--gradX: 100%;
 	--gradY: 50%;
-	--c1: rgba(168, 239, 255, 1);
-	--c2: rgba(168, 239, 255, 0.1);
+	--c1: rgb(255, 255, 255, 1);
+	--c2: rgba(58, 59, 57, 0.5);
 }
 
 /* animations */
@@ -286,11 +286,6 @@ h1 {
   gap: 50px;
 }
 
-.work-item.inactive,
-#expand.inactive {
-  margin-left: -5000%;
-}
-
 .work-item,
 .proj-item {
   margin: 5% auto;
@@ -300,9 +295,10 @@ h1 {
   gap: 12px;
   width: 90%;
   padding: 16px;
-  border: 1px solid;
+  border: 2px solid;
   border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
   animation: borderRotate var(--d) linear infinite forwards;
+  box-shadow: 3px 3px 50px black;
 }
 
 .work-item.animate {
