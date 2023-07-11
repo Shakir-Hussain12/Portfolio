@@ -17,7 +17,7 @@ export default function Works() {
         })
       }
       <center>
-        <NavLink to="/project" data-aos="fade-left" className="waves-effect waves-light btn teal darken-4">
+        <NavLink to="/project" data-aos="fade-left" className="waves-effect waves-light btn teal darken-4 showall">
           <i className="material-icons right">featured_play_list</i>
           Show All
         </NavLink>

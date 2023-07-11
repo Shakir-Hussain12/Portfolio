@@ -9,6 +9,16 @@
 	--c2: rgba(58, 59, 57, 0.5);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  color: white;
+}
+
 /* animations */
 @keyframes rotate-border {
   0% {
@@ -247,7 +257,6 @@ h1 {
   font-size: 16px;
   font-style: normal;
   line-height: 24px;
-  color: lightgray;
 }
 
 .headline,
@@ -318,30 +327,6 @@ h1 {
   color: white;
 }
 
-.frame-2 {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  padding-inline-start: 0;
-}
-
-.client {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 16px;
-  color: var(--blue-color);
-  text-transform: uppercase;
-}
-
-.details {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 16px;
-  color: #71869a;
-}
-
 .inside {
   display: flex;
   min-width: 67%;
@@ -352,18 +337,11 @@ h1 {
   font-weight: 400;
   font-size: 15px;
   line-height: 24px;
-  color: lightgray;
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  gap: 10px;
-}
-
-.RoR {
-  display: none;
+.showall:hover {
+  color: black;
+  box-shadow: 5px 5px 5px black;
 }
 
 .resume-button {
@@ -372,15 +350,14 @@ h1 {
   width: 168px;
   height: 48px;
   padding: 12px;
-  gap: 10px;
   text-decoration: none;
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
   line-height: 24px;
   letter-spacing: 0.03em;
-  color: #396df2;
-  text-align: center;
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+  color: black;
   transition: background 2s;
 }
 
@@ -443,14 +420,9 @@ hr.solid {
 .content {
   text-align: center;
   color: white;
-  padding-top: 50px;
   padding-bottom: 20px;
-  border-top-left-radius: 100px;  
-  background-color: #253858;
-}
-
-.content > h1 {
-  color: black;
+  padding-inline: 10%;
+  border-top-left-radius: 100px;
 }
 
 .contact-text {
@@ -493,8 +465,9 @@ button {
   font-weight: 500;
   font-size: 17px;
   line-height: 24px;
-  color: white;
+  color: black;
   border: 1px solid#CFD8DC;
+  background: -webkit-linear-gradient(left, #00f298, #07f7f7);
 }
 
 .round {
@@ -518,13 +491,12 @@ button {
   background: #6070ff;
   box-shadow: 5px 5px 5px blue;
   color: white;
-  transition: box-shadow 1s, background 1.5s;
+  transition: box-shadow 1s, background 1s;
 }
 
 .form-btn:hover {
   background: white;
-  color: black;
-  filter: drop-shadow(5px 5px 5px red);
+  filter: drop-shadow(5px 5px 5px black);
 }
 
 button:disabled {
@@ -536,8 +508,12 @@ button:disabled {
   color: green;
 }
 
-.page-flow > li > a:hover {
+.page-flow > li > a {
   color: black;
+}
+
+.page-flow > li > a:hover {
+  color: white;
 }
 
 .icons > a > img:hover {
@@ -610,11 +586,11 @@ nav {
 
   .logo {
     align-self: center;
+    font-size: 20px;
     animation: resize 2s 1 linear;
-  }
-
-  .union {
-    display: none;
+    background: -webkit-linear-gradient(left, #00f298, #07f7f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .page-flow {
@@ -695,38 +671,9 @@ nav {
     padding-right: 60px;
   }
 
-  .frame-2 {
-    gap: 2%;
-    align-items: center;
-  }
-
-  .frame-end {
-    margin-left: -6%;
-  }
-
-  .RoR {
-    display: inline-block;
-  }
-
-  .client,
-  .details {
-    font-size: 1em;
-    line-height: 1em;
-    color: #344563;
-  }
-
-  .details {
-    font-weight: 400;
-    color: #6b778c;
-  }
-
-  .tags {
-    gap: 2%;
-  }
-
   .about {
     flex-direction: row;
-    padding: 8% 2%;
+    padding: 8% 2% 2% 2%;
     padding-inline-start: 3%;
     margin-top: -10%;
   }
@@ -781,7 +728,6 @@ nav {
   .content {
     text-align: center;
     padding: 3%;
-    border-top-left-radius: 20%;
   }
 
   .content > h1 {
@@ -803,7 +749,6 @@ nav {
     font-size: 20px;
     line-height: 28px;
     padding: 0 10%;
-    color: #ebebff;
   }
 
   hr.solid {
@@ -814,10 +759,6 @@ nav {
 @media (min-width: 1000px) {
   header {
     top: -2vh;
-  }
-
-  .frame-end {
-    margin-left: -4%;
   }
 
   .navbar {
