@@ -445,8 +445,8 @@ hr.solid {
   color: white;
   padding-top: 50px;
   padding-bottom: 20px;
-  border-top-left-radius: 100px;
-  background-color: #396df2;
+  border-top-left-radius: 100px;  
+  background-color: #253858;
 }
 
 .content > h1 {
@@ -460,7 +460,7 @@ hr.solid {
 .my-form {
   display: flex;
   flex-direction: column;
-  max-width: 330px;
+  max-width: 90%;
   margin: 0 auto;
   gap: 25px;
 }
@@ -468,28 +468,27 @@ hr.solid {
 input {
   height: 50px;
   font-weight: 400;
-  color: black;
+  color: white;
   line-height: 20px !important;
-  border-radius: 10px !important;
   padding: 5px !important;
-  width: 96% !important;
-  border: 1px solid#CFD8DC !important;
-  background-color: white !important;
+  max-width: 95% !important;
+  border-bottom: 1px solid#CFD8DC !important;
 }
 
 textarea {
-  color: black;
-  background-color: white;
+  color: white;
   padding: 10px !important;
-  border-radius: 10px !important;
-  border: 1px solid#CFD8DC !important;
+  border: none !important;
+  border-bottom: 1px solid#CFD8DC !important;
   height: 150px;
   outline: none;
+  resize: none !important;
 }
 
 button {
   width: 160px;
   height: 48px;
+  margin: auto;
   border-radius: 10px;
   font-weight: 500;
   font-size: 17px;
@@ -503,25 +502,6 @@ button {
   margin: 0 auto;
   width: 100px;
   border-radius: 10px;
-}
-
-.message {
-  visibility: hidden;
-}
-
-.message.active {
-  visibility: visible;
-  position: relative;
-  top: -19vh;
-  left: 44%;
-  height: 10vh;
-  border-radius: 150px 80px 100px 15px;
-  text-align: center;
-  padding: 5%;
-  border: none;
-  background: red;
-  max-width: 53%;
-  font-size: 0.7rem;
 }
 
 .items {
@@ -800,13 +780,22 @@ nav {
 
   .content {
     text-align: center;
-    padding: 3% 26%;
+    padding: 3%;
     border-top-left-radius: 20%;
   }
 
   .content > h1 {
     font-size: 40px;
     line-height: 52px;
+  }
+  
+  .inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input {
+    max-width: 45% !important;
   }
 
   .contact-text {

@@ -1,12 +1,11 @@
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React from 'react';
 import './Style.css';
 
 import Navbar from '../components/Navbar';
 import Works from '../components/works';
 
 const Home = () => {
-  const [email, setEmail] = useState('');
   const errDisplay = document.querySelector('.message');
   const form = document.querySelector('#myform');
   const html = document.querySelector('html');
@@ -17,14 +16,8 @@ const Home = () => {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const str = email.toLowerCase();
-    if (email !== str) {
-      errDisplay.classList.add('active');
-    } else {
-      form.submit();
-    }
+  const handleSubmit = () => {
+    form.submit();
   };
 
   return (
@@ -167,16 +160,12 @@ const Home = () => {
             If you have an application you are interested in developing, a feature that you need built or a project that needs coding. I’d love to help with it
           </p>
           <form action="https://formspree.io/f/myyvrwaj" id="myform" className="my-form" method="post" onSubmit={handleSubmit}>
-            <input name="user_name" type="text" placeholder="Name" maxLength="30" required />
-            <input id="email" name="user_email" type="email" placeholder="Email" required onChange={(e) => { setEmail(e.target.value); }} />
+            <div className="inputs">
+              <input name="user_name" type="text" placeholder="Name" maxLength="30" required />
+              <input id="email" name="user_email" type="email" placeholder="Email" required />
+            </div>
             <textarea name="message" cols="30" rows="10" placeholder="Write your message here" maxLength="500" required />
             <button type="submit" className="form-btn">Get In Touch</button>
-            <span className="message">
-              Email Should be in lower case
-              <br />
-              {' '}
-              <span id="innermsg">(Click Anywhere to hide this box)</span>
-            </span>
             <hr className="round" />
           </form>
         </div>
