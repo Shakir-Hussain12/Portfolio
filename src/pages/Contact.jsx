@@ -23,7 +23,6 @@ const Contact = () => (
           </div>
           <textarea name="message" cols="30" rows="10" placeholder="Write your message here" maxLength="500" required />
           <button type="submit" className="form-btn">Get In Touch</button>
-          <hr className="round" />
         </form>
       </div>
     </section>
