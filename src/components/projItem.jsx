@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function ProjItem({ myProj }) {
   const {
-    title, info, tech, images, buttons,
+    title, info, tech, image, buttons,
   } = myProj;
 
   return (
@@ -27,7 +27,7 @@ export default function ProjItem({ myProj }) {
       className="proj-item inactive"
     >
       <div className="thumbnail">
-        <img src={images[0]} alt="N/A" />
+        <img src={image} alt="N/A" />
       </div>
       <div className="primary-text">
         <h1 className="title">
@@ -69,7 +69,7 @@ ProjItem.defaultProps = {
     title: '',
     info: '',
     tech: '',
-    images: '',
+    image: '',
     buttons: '',
   },
 };
@@ -79,7 +79,7 @@ ProjItem.propTypes = {
     title: PropTypes.string,
     info: PropTypes.string,
     tech: PropTypes.oneOfType([PropTypes.array]),
-    images: PropTypes.oneOfType([PropTypes.array]),
+    image: PropTypes.oneOfType([PropTypes.array]),
     buttons: PropTypes.oneOfType([PropTypes.array]),
   }),
 };

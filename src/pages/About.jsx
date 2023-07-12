@@ -1,7 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
 import Navbar from '../components/Navbar';
+
 import './Style.css';
+import Skills from '../../skills';
 
 const About = () => (
   <div className="wrapper">
@@ -46,51 +48,16 @@ const About = () => (
         </ul>
         <a href="/" className="resume-button">Get My Resume</a>
       </div>
-      <div className="skill-list">
+      <div className="skills">
+        <h2>Skills & Tools</h2>
         <ul>
-          <li>
-            <span className="list-item">
-              Languages
-              {' '}
-              <span><img src="./images/Disabled.png" alt="languages" /></span>
-            </span>
-            <ul className="desk-languages">
-              <li className="sub-language">
-                <a href="/"><img src="./images/Ellipse 1.png" alt="JS" /></a>
-                <span className="inside-text">
-                  JavaSript
-                </span>
-              </li>
-              <li className="sub-language">
-                <a href="/"><img src="./images//Ellipse 1 (1).png" alt="HTML" /></a>
-                <span className="inside-text">
-                  HTML
-                </span>
-              </li>
-              <li className="sub-language">
-                <a href="/"><img src="./images//Ellipse 1 (2).png" alt="CSS" /></a>
-                <span className="inside-text">
-                  CSS
-                </span>
-              </li>
-            </ul>
-          </li>
-          <li className="list-item">
-            Frameworks
-            {' '}
-            <span><img src="./images/Enabled.png" alt="frameworks" /></span>
-          </li>
-          <li>
-            <hr className="solid" />
-          </li>
-          <li className="list-item">
-            Skills
-            {' '}
-            <span><img src="./images/Enabled.png" alt="Skills" /></span>
-          </li>
-          <li>
-            <hr className="solid" />
-          </li>
+          {
+              Skills.map((skill) => (
+                <li key={skill}>
+                  {skill}
+                </li>
+              ))
+            }
         </ul>
       </div>
     </section>

@@ -4,6 +4,7 @@ import './Style.css';
 
 import Navbar from '../components/Navbar';
 import Works from '../components/works';
+import Skills from '../../skills';
 
 const Home = () => {
   const errDisplay = document.querySelector('.message');
@@ -31,9 +32,9 @@ const Home = () => {
         <p className="body-text">
           I’m a Full-stack developer and I can help you build a product , feature or website. Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
         </p>
-        <a href="/" className="connect">
+        <p href="/" className="connect">
           Let&apos;s connect
-        </a>
+        </p>
         <ul className="socials">
           <li className="icons">
             <a href="/">
@@ -50,11 +51,6 @@ const Home = () => {
               <img src="../images/Vector.png" alt="Not Found" />
             </a>
           </li>
-          <li className="icons">
-            <a href="/">
-              <img src="../images/Vector.svg" alt="Not Found" />
-            </a>
-          </li>
         </ul>
       </section>
       {/* <!-- Works Section --> */}
@@ -69,7 +65,7 @@ const Home = () => {
             Myself
           </h1>
           <p className="body-text">
-            I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
+            I’m a Full-stack developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
           </p>
           <a href="/" className="connect">
             Let&apos;s connect
@@ -90,59 +86,19 @@ const Home = () => {
                 <img src="../images/Vector.png" alt="Not Found" />
               </a>
             </li>
-            <li className="icons">
-              <a href="/">
-                <img src="../images/Vector.svg" alt="Not Found" />
-              </a>
-            </li>
           </ul>
           <a href="/" className="resume-button">Get My Resume</a>
         </div>
-        <div className="skill-list">
+        <div className="skills">
+          <h2>Skills & Tools</h2>
           <ul>
-            <li>
-              <span className="list-item">
-                Languages
-                {' '}
-                <span><img src="../images/Disabled.png" alt="languages" /></span>
-              </span>
-              <ul className="desk-languages">
-                <li className="sub-language">
-                  <a href="/"><img src="../images/Ellipse 1.png" alt="JS" /></a>
-                  <span className="inside-text">
-                    JavaSript
-                  </span>
+            {
+              Skills.map((skill) => (
+                <li key={skill}>
+                  {skill}
                 </li>
-                <li className="sub-language">
-                  <a href="/"><img src="../images//Ellipse 1 (1).png" alt="HTML" /></a>
-                  <span className="inside-text">
-                    HTML
-                  </span>
-                </li>
-                <li className="sub-language">
-                  <a href="/"><img src="../images//Ellipse 1 (2).png" alt="CSS" /></a>
-                  <span className="inside-text">
-                    CSS
-                  </span>
-                </li>
-              </ul>
-            </li>
-            <li className="list-item">
-              Frameworks
-              {' '}
-              <span><img src="../images/Enabled.png" alt="frameworks" /></span>
-            </li>
-            <li>
-              <hr className="solid" />
-            </li>
-            <li className="list-item">
-              Skills
-              {' '}
-              <span><img src="../images/Enabled.png" alt="Skills" /></span>
-            </li>
-            <li>
-              <hr className="solid" />
-            </li>
+              ))
+            }
           </ul>
         </div>
       </section>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function WorkItem({ myProj }) {
   const {
-    title, info, tech, images, buttons,
+    title, info, tech, image, buttons,
   } = myProj;
 
   return (
@@ -14,7 +14,7 @@ export default function WorkItem({ myProj }) {
       className="work-item"
     >
       <div className="thumbnail">
-        <img src={images[0]} alt="N/A" />
+        <img src={image} alt="N/A" />
       </div>
       <div className="primary-text">
         <h1
@@ -70,7 +70,7 @@ WorkItem.defaultProps = {
     title: '',
     info: '',
     tech: '',
-    images: '',
+    image: '',
     buttons: '',
   },
 };
@@ -79,8 +79,8 @@ WorkItem.propTypes = {
   myProj: PropTypes.shape({
     title: PropTypes.string,
     info: PropTypes.string,
+    image: PropTypes.string,
     tech: PropTypes.oneOfType([PropTypes.array]),
-    images: PropTypes.oneOfType([PropTypes.array]),
     buttons: PropTypes.oneOfType([PropTypes.array]),
   }),
 };
