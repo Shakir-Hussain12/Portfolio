@@ -8,6 +8,7 @@ export default function Works() {
   let mykey = 0;
   return (
     <section id="work">
+      <h1 style={{ textAlign: 'center' }}>Projects</h1>
       {
         dataItems.map((item) => {
           mykey += 1;
