@@ -19,7 +19,7 @@ const About = () => (
           Myself
         </h1>
         <p className="body-text">
-          I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
+          Hi, I am Shakir Hussain. A Full-stack Developer with a combined experience of 1+ years with HTML, CSS, JavaScript, React, Ruby on Rails and remote web development. Apart from Full-stack development, I am also a lab instructor at the university of FAST-NUCES.
         </p>
         <a href="/" className="connect">
           Let&apos;s connect
