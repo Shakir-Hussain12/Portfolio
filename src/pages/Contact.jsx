@@ -8,7 +8,7 @@ const Contact = () => (
     <header>
       <Navbar />
     </header>
-    <section className="contact-me" id="contact" style={{ marginTop: '10%' }}>
+    <section className="contact-me" id="contact">
       <div className="content">
         <h1>
           Contact me

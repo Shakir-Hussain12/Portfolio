@@ -26,27 +26,27 @@ const About = () => (
         </a>
         <ul className="socials">
           <li className="icons">
-            <a href="/">
-              <img src="./images/Vector-1.png" alt="Not Found" />
+            <a href="https://www.facebook.com/shakir.hussain.560/">
+              <img src="./images/Facebook.png" alt="Facebook" />
             </a>
           </li>
           <li className="icons">
-            <a href="/">
-              <img src="./images/Linkedin icon.png" alt="Not Found" />
+            <a href="https://twitter.com/S_Hussain_99">
+              <img src="./images/Twitter.png" alt="Twitter" />
             </a>
           </li>
           <li className="icons">
-            <a href="/">
-              <img src="./images/Vector.png" alt="Not Found" />
+            <a href="https://github.com/Shakir-Hussain12">
+              <img src="../images/GitHub.png" alt="GitHub" />
             </a>
           </li>
           <li className="icons">
-            <a href="/">
-              <img src="./images/Vector.svg" alt="Not Found" />
+            <a href="https://www.linkedin.com/in/shakir-hussain99/">
+              <img src="../images/LinkedIn.png" alt="LinkedIn" />
             </a>
           </li>
         </ul>
-        <a href="/" className="resume-button">Get My Resume</a>
+        <a className="resume-button" href="./docs/Shakir_Hussain_Resume.pdf" download="Shakir-Hussain-Resume">Get My Resume</a>
       </div>
       <div className="skills">
         <h2>Skills & Tools</h2>

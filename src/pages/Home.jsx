@@ -11,6 +11,31 @@ const Home = () => {
   const form = document.querySelector('#myform');
   const html = document.querySelector('html');
 
+  const generateLinks = () => (
+    <ul className="socials">
+      <li className="icons">
+        <a href="https://www.facebook.com/shakir.hussain.560/">
+          <img src="./images/Facebook.png" alt="Facebook" />
+        </a>
+      </li>
+      <li className="icons">
+        <a href="https://twitter.com/S_Hussain_99">
+          <img src="./images/Twitter.png" alt="Twitter" />
+        </a>
+      </li>
+      <li className="icons">
+        <a href="https://github.com/Shakir-Hussain12">
+          <img src="../images/GitHub.png" alt="GitHub" />
+        </a>
+      </li>
+      <li className="icons">
+        <a href="https://www.linkedin.com/in/shakir-hussain99/">
+          <img src="../images/LinkedIn.png" alt="LinkedIn" />
+        </a>
+      </li>
+    </ul>
+  );
+
   html.onclick = () => {
     if (errDisplay) {
       errDisplay.classList.remove('active');
@@ -27,31 +52,23 @@ const Home = () => {
         <Navbar />
       </header>
       <section className="headline">
-        <h2>Hello!</h2>
-        <h4>I&apos;m Shakir Hussain </h4>
-        <p className="body-text">
-          I’m a Full-stack developer and I can help you build a product , feature or website. Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
-        </p>
-        <p href="/" className="connect">
-          Let&apos;s connect
-        </p>
-        <ul className="socials">
-          <li className="icons">
-            <a href="/">
-              <img src="../images/Vector-1.png" alt="Not Found" />
-            </a>
-          </li>
-          <li className="icons">
-            <a href="/">
-              <img src="../images/Linkedin icon.png" alt="Not Found" />
-            </a>
-          </li>
-          <li className="icons">
-            <a href="/">
-              <img src="../images/Vector.png" alt="Not Found" />
-            </a>
-          </li>
-        </ul>
+        <div className="left-head">
+          <h2>Hello!</h2>
+          <h4>I&apos;m Shakir Hussain </h4>
+          <p className="body-text">
+            I’m a Full-stack developer and I can help you build a product , feature or website. Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
+          </p>
+          <a className="contact-btn" href="#contact">Contact Me</a>
+          <p href="/" className="connect">
+            Let&apos;s connect
+          </p>
+          {generateLinks()}
+        </div>
+        <div className="right-head">
+          <div className="thumbnail">
+            <img src="./images/Profile.jpg" alt="myPicture" id="head-img" />
+          </div>
+        </div>
       </section>
       {/* <!-- Works Section --> */}
       <Works />
@@ -70,24 +87,8 @@ const Home = () => {
           <a href="/" className="connect">
             Let&apos;s connect
           </a>
-          <ul className="socials">
-            <li className="icons">
-              <a href="/">
-                <img src="../images/Vector-1.png" alt="Not Found" />
-              </a>
-            </li>
-            <li className="icons">
-              <a href="/">
-                <img src="../images/Linkedin icon.png" alt="Not Found" />
-              </a>
-            </li>
-            <li className="icons">
-              <a href="/">
-                <img src="../images/Vector.png" alt="Not Found" />
-              </a>
-            </li>
-          </ul>
-          <a href="/" className="resume-button">Get My Resume</a>
+          {generateLinks()}
+          <a className="resume-button" href="./docs/Shakir_Hussain_Resume.pdf" download="Shakir-Hussain-Resume">Get My Resume</a>
         </div>
         <div className="skills">
           <h2>Skills & Tools</h2>
