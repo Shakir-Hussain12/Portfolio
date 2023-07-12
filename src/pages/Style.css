@@ -129,6 +129,7 @@ p {
   }
 }
 
+/* stylelint-disable */
 @property --angle {
   syntax: '<angle>';
   initial-value: 90deg;
@@ -146,6 +147,7 @@ p {
   initial-value: 0%;
   inherits: true;
 }
+/* stylelint-enable */
 
 .link.active {
   border-bottom: 3px solid green;
