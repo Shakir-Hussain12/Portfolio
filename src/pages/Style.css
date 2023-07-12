@@ -211,8 +211,8 @@ header {
   width: 100%;
   height: 45px;
   padding: 3%;
-  position: absolute;
-  z-index: 1;
+  position: fixed;
+  z-index: 2;
   top: 0;
 }
 
@@ -626,9 +626,8 @@ nav {
 
   header {
     background-color: var(--back-color);
-    position: absolute;
-    top: 0;
-    z-index: 1;
+    position: fixed;
+    height: 104px;
   }
 
   .logo {
