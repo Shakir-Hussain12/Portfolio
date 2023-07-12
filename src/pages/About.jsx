@@ -1,7 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
 import Navbar from '../components/Navbar';
+
 import './Style.css';
+import Skills from '../../skills';
 
 const About = () => (
   <div className="wrapper">
@@ -17,80 +19,45 @@ const About = () => (
           Myself
         </h1>
         <p className="body-text">
-          I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
+          Hi, I am Shakir Hussain. A Full-stack Developer with a combined experience of 1+ years with HTML, CSS, JavaScript, React, Ruby on Rails and remote web development. Apart from Full-stack development, I am also a lab instructor at the university of FAST-NUCES.
         </p>
         <a href="/" className="connect">
           Let&apos;s connect
         </a>
         <ul className="socials">
           <li className="icons">
-            <a href="/">
-              <img src="./images/Vector-1.png" alt="Not Found" />
+            <a href="https://www.facebook.com/shakir.hussain.560/">
+              <img src="./images/Facebook.png" alt="Facebook" />
             </a>
           </li>
           <li className="icons">
-            <a href="/">
-              <img src="./images/Linkedin icon.png" alt="Not Found" />
+            <a href="https://twitter.com/S_Hussain_99">
+              <img src="./images/Twitter.png" alt="Twitter" />
             </a>
           </li>
           <li className="icons">
-            <a href="/">
-              <img src="./images/Vector.png" alt="Not Found" />
+            <a href="https://github.com/Shakir-Hussain12">
+              <img src="../images/GitHub.png" alt="GitHub" />
             </a>
           </li>
           <li className="icons">
-            <a href="/">
-              <img src="./images/Vector.svg" alt="Not Found" />
+            <a href="https://www.linkedin.com/in/shakir-hussain99/">
+              <img src="../images/LinkedIn.png" alt="LinkedIn" />
             </a>
           </li>
         </ul>
-        <a href="/" className="resume-button">Get My Resume</a>
+        <a className="resume-button" href="./docs/Shakir_Hussain_Resume.pdf" download="Shakir-Hussain-Resume">Get My Resume</a>
       </div>
-      <div className="skill-list">
+      <div className="skills">
+        <h2>Skills & Tools</h2>
         <ul>
-          <li>
-            <span className="list-item">
-              Languages
-              {' '}
-              <span><img src="./images/Disabled.png" alt="languages" /></span>
-            </span>
-            <ul className="desk-languages">
-              <li className="sub-language">
-                <a href="/"><img src="./images/Ellipse 1.png" alt="JS" /></a>
-                <span className="inside-text">
-                  JavaSript
-                </span>
-              </li>
-              <li className="sub-language">
-                <a href="/"><img src="./images//Ellipse 1 (1).png" alt="HTML" /></a>
-                <span className="inside-text">
-                  HTML
-                </span>
-              </li>
-              <li className="sub-language">
-                <a href="/"><img src="./images//Ellipse 1 (2).png" alt="CSS" /></a>
-                <span className="inside-text">
-                  CSS
-                </span>
-              </li>
-            </ul>
-          </li>
-          <li className="list-item">
-            Frameworks
-            {' '}
-            <span><img src="./images/Enabled.png" alt="frameworks" /></span>
-          </li>
-          <li>
-            <hr className="solid" />
-          </li>
-          <li className="list-item">
-            Skills
-            {' '}
-            <span><img src="./images/Enabled.png" alt="Skills" /></span>
-          </li>
-          <li>
-            <hr className="solid" />
-          </li>
+          {
+              Skills.map((skill) => (
+                <li key={skill}>
+                  {skill}
+                </li>
+              ))
+            }
         </ul>
       </div>
     </section>

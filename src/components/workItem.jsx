@@ -3,22 +3,41 @@ import PropTypes from 'prop-types';
 
 export default function WorkItem({ myProj }) {
   const {
-    title, info, tech, images, buttons,
+    title, info, tech, image, buttons,
   } = myProj;
 
   return (
-    <div className="work-item inactive">
+    <div
+      data-aos="fade-right"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      className="work-item"
+    >
       <div className="thumbnail">
-        <img src={images[0]} alt="N/A" />
+        <img src={image} alt="N/A" />
       </div>
       <div className="primary-text">
-        <h1 className="title">
+        <h1
+          data-aos="fade-left"
+          data-aos-duration="2000"
+          className="title"
+        >
           {title}
         </h1>
-        <p className="description">
+        <p
+          data-aos="fade-right"
+          data-aos-delay="500"
+          data-aos-duration="2000"
+          className="description"
+        >
           {info}
         </p>
-        <li className="showbuttons">
+        <li
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-duration="3000"
+          className="showbuttons"
+        >
           <ul className="showtech">
             {
                     tech.map((item) => (
@@ -51,7 +70,7 @@ WorkItem.defaultProps = {
     title: '',
     info: '',
     tech: '',
-    images: '',
+    image: '',
     buttons: '',
   },
 };
@@ -60,8 +79,8 @@ WorkItem.propTypes = {
   myProj: PropTypes.shape({
     title: PropTypes.string,
     info: PropTypes.string,
+    image: PropTypes.string,
     tech: PropTypes.oneOfType([PropTypes.array]),
-    images: PropTypes.oneOfType([PropTypes.array]),
     buttons: PropTypes.oneOfType([PropTypes.array]),
   }),
 };

@@ -1,14 +1,40 @@
 /* eslint-disable max-len */
-import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Works from '../components/works';
+import React from 'react';
 import './Style.css';
 
+import Navbar from '../components/Navbar';
+import Works from '../components/works';
+import Skills from '../../skills';
+
 const Home = () => {
-  const [email, setEmail] = useState('');
   const errDisplay = document.querySelector('.message');
   const form = document.querySelector('#myform');
   const html = document.querySelector('html');
+
+  const generateLinks = () => (
+    <ul className="socials">
+      <li className="icons">
+        <a href="https://www.facebook.com/shakir.hussain.560/">
+          <img src="./images/Facebook.png" alt="Facebook" />
+        </a>
+      </li>
+      <li className="icons">
+        <a href="https://twitter.com/S_Hussain_99">
+          <img src="./images/Twitter.png" alt="Twitter" />
+        </a>
+      </li>
+      <li className="icons">
+        <a href="https://github.com/Shakir-Hussain12">
+          <img src="../images/GitHub.png" alt="GitHub" />
+        </a>
+      </li>
+      <li className="icons">
+        <a href="https://www.linkedin.com/in/shakir-hussain99/">
+          <img src="../images/LinkedIn.png" alt="LinkedIn" />
+        </a>
+      </li>
+    </ul>
+  );
 
   html.onclick = () => {
     if (errDisplay) {
@@ -16,14 +42,8 @@ const Home = () => {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const str = email.toLowerCase();
-    if (email !== str) {
-      errDisplay.classList.add('active');
-    } else {
-      form.submit();
-    }
+  const handleSubmit = () => {
+    form.submit();
   };
 
   return (
@@ -32,40 +52,23 @@ const Home = () => {
         <Navbar />
       </header>
       <section className="headline">
-        <h1>
-          I’m Shakir
-          {' '}
-          <br />
-          Glad to see you!
-        </h1>
-        <p className="body-text">
-          I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
-        </p>
-        <a href="/" className="connect">
-          Let&apos;s connect
-        </a>
-        <ul className="socials">
-          <li className="icons">
-            <a href="/">
-              <img src="../images/Vector-1.png" alt="Not Found" />
-            </a>
-          </li>
-          <li className="icons">
-            <a href="/">
-              <img src="../images/Linkedin icon.png" alt="Not Found" />
-            </a>
-          </li>
-          <li className="icons">
-            <a href="/">
-              <img src="../images/Vector.png" alt="Not Found" />
-            </a>
-          </li>
-          <li className="icons">
-            <a href="/">
-              <img src="../images/Vector.svg" alt="Not Found" />
-            </a>
-          </li>
-        </ul>
+        <div className="left-head">
+          <h2>Hello!</h2>
+          <h4>I&apos;m Shakir Hussain </h4>
+          <p className="body-text">
+            I’m a Full-stack developer and I can help you build a product , feature or website. Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
+          </p>
+          <a className="contact-btn" href="#contact">Contact Here</a>
+          <p href="/" className="connect">
+            Let&apos;s connect
+          </p>
+          {generateLinks()}
+        </div>
+        <div className="right-head">
+          <div className="thumbnail">
+            <img src="./images/Profile.jpg" alt="myPicture" id="head-img" />
+          </div>
+        </div>
       </section>
       {/* <!-- Works Section --> */}
       <Works />
@@ -79,80 +82,24 @@ const Home = () => {
             Myself
           </h1>
           <p className="body-text">
-            I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
+            Hi, I am Shakir Hussain. Full-stack Developer with a combined experience of 1+ years with HTML, CSS, JavaScript, React, Ruby on Rails and remote web development. Apart from Full-stack development, I am also a lab instructor at the university of FAST-NUCES.
           </p>
           <a href="/" className="connect">
             Let&apos;s connect
           </a>
-          <ul className="socials">
-            <li className="icons">
-              <a href="/">
-                <img src="../images/Vector-1.png" alt="Not Found" />
-              </a>
-            </li>
-            <li className="icons">
-              <a href="/">
-                <img src="../images/Linkedin icon.png" alt="Not Found" />
-              </a>
-            </li>
-            <li className="icons">
-              <a href="/">
-                <img src="../images/Vector.png" alt="Not Found" />
-              </a>
-            </li>
-            <li className="icons">
-              <a href="/">
-                <img src="../images/Vector.svg" alt="Not Found" />
-              </a>
-            </li>
-          </ul>
-          <a href="/" className="resume-button">Get My Resume</a>
+          {generateLinks()}
+          <a className="resume-button" href="./docs/Shakir_Hussain_Resume.pdf" download="Shakir-Hussain-Resume">Get My Resume</a>
         </div>
-        <div className="skill-list">
+        <div className="skills">
+          <h2>Skills & Tools</h2>
           <ul>
-            <li>
-              <span className="list-item">
-                Languages
-                {' '}
-                <span><img src="../images/Disabled.png" alt="languages" /></span>
-              </span>
-              <ul className="desk-languages">
-                <li className="sub-language">
-                  <a href="/"><img src="../images/Ellipse 1.png" alt="JS" /></a>
-                  <span className="inside-text">
-                    JavaSript
-                  </span>
+            {
+              Skills.map((skill) => (
+                <li key={skill}>
+                  {skill}
                 </li>
-                <li className="sub-language">
-                  <a href="/"><img src="../images//Ellipse 1 (1).png" alt="HTML" /></a>
-                  <span className="inside-text">
-                    HTML
-                  </span>
-                </li>
-                <li className="sub-language">
-                  <a href="/"><img src="../images//Ellipse 1 (2).png" alt="CSS" /></a>
-                  <span className="inside-text">
-                    CSS
-                  </span>
-                </li>
-              </ul>
-            </li>
-            <li className="list-item">
-              Frameworks
-              {' '}
-              <span><img src="../images/Enabled.png" alt="frameworks" /></span>
-            </li>
-            <li>
-              <hr className="solid" />
-            </li>
-            <li className="list-item">
-              Skills
-              {' '}
-              <span><img src="../images/Enabled.png" alt="Skills" /></span>
-            </li>
-            <li>
-              <hr className="solid" />
-            </li>
+              ))
+            }
           </ul>
         </div>
       </section>
@@ -166,17 +113,12 @@ const Home = () => {
             If you have an application you are interested in developing, a feature that you need built or a project that needs coding. I’d love to help with it
           </p>
           <form action="https://formspree.io/f/myyvrwaj" id="myform" className="my-form" method="post" onSubmit={handleSubmit}>
-            <input name="user_name" type="text" placeholder="Name" maxLength="30" required />
-            <input id="email" name="user_email" type="email" placeholder="Email" required onChange={(e) => { setEmail(e.target.value); }} />
+            <div className="inputs">
+              <input name="user_name" type="text" placeholder="Name" maxLength="30" required />
+              <input id="email" name="user_email" type="email" placeholder="Email" required />
+            </div>
             <textarea name="message" cols="30" rows="10" placeholder="Write your message here" maxLength="500" required />
             <button type="submit" className="form-btn">Get In Touch</button>
-            <span className="message">
-              Email Should be in lower case
-              <br />
-              {' '}
-              <span id="innermsg">(Click Anywhere to hide this box)</span>
-            </span>
-            <hr className="round" />
           </form>
         </div>
       </footer>

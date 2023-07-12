@@ -52,7 +52,7 @@ const SideNav = () => {
                 );
               })
           }
-        <li><a className="sidenav-close" href="/" onClick={handleNav}><i className="material-icons">arrow_back</i></a></li>
+        <li><a className="sidenav-close" href="/" onClick={handleNav}><i className="medium right material-icons">clear_all</i></a></li>
       </ul>
       <a href="/" data-target="slide-out" className="sidenav-trigger" onClick={handleNav}><i className="material-icons"><i className="material-icons">menu</i></i></a>
     </>
