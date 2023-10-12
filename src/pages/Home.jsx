@@ -1,14 +1,19 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import './Style.css';
 
 import Navbar from '../components/Navbar';
 import Works from '../components/works';
 import Skills from '../../skills';
 
+emailjs.init('Yo3Wc42ylV2swX0C3');
+
 const Home = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const errDisplay = document.querySelector('.message');
-  const form = document.querySelector('#myform');
   const html = document.querySelector('html');
 
   const generateLinks = () => (
@@ -42,8 +47,21 @@ const Home = () => {
     }
   };
 
-  const handleSubmit = () => {
-    form.submit();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const serviceID = 'service_3oyxaj8';
+    const templateID = 'template_54vipmc';
+
+    emailjs.send(serviceID, templateID, {
+      from_name: name,
+      from_email: email,
+      message,
+    });
+
+    setName('');
+    setEmail('');
+    setMessage('');
   };
 
   return (
@@ -112,13 +130,13 @@ const Home = () => {
           <p className="contact-text">
             If you have an application you are interested in developing, a feature that you need built or a project that needs coding. I’d love to help with it
           </p>
-          <form action="https://formspree.io/f/myyvrwaj" id="myform" className="my-form" method="post" onSubmit={handleSubmit}>
+          <form id="myform" className="my-form">
             <div className="inputs">
-              <input name="user_name" type="text" placeholder="Name" maxLength="30" required />
-              <input id="email" name="user_email" type="email" placeholder="Email" required />
+              <input name="user_name" type="text" placeholder="Name" maxLength="30" value={name} onChange={(e) => setName(e.target.value)} required />
+              <input id="email" name="user_email" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </div>
-            <textarea name="message" cols="30" rows="10" placeholder="Write your message here" maxLength="500" required />
-            <button type="submit" className="form-btn">Get In Touch</button>
+            <textarea name="message" cols="30" rows="10" placeholder="Write your message here" maxLength="500" value={message} onChange={(e) => setMessage(e.target.value)} required />
+            <button type="submit" className="form-btn" onClick={handleSubmit}>Get In Touch</button>
           </form>
         </div>
       </footer>
